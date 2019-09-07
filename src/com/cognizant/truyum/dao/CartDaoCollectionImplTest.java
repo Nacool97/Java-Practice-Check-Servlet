@@ -45,6 +45,8 @@ public class CartDaoCollectionImplTest {
 	CartDaoCollectionImplTest cart=new CartDaoCollectionImplTest();
 	try {
 		cart.testAddCartItem();
+		cart.testAddCartItem();
+		System.out.println("*******-------******");
 		cart.testGetAllCartItems();
 		} catch (CartEmptyException e) {
 		System.out.println(e);

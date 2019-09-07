@@ -11,15 +11,15 @@
 <header> truYum 
 <img src = "img.png" alt = "images/image_logo" />
 <nav>
-<a class="a2" href="menu-item-list-customer.html"><u>Menu</u></a>
-<a class="a1" href="cart.html" ><u>Cart</a></u></nav>
+<a class = "a2" href="/Servlet-TruYum/ShowMenuItemListCustomer"><u>Menu</u></a>
+<a class = "a1" href="/Servlet-TruYum/ShowCart" ><u>Cart</a></u>
 </header>
 
 <div> 
 
 
 <h2>Menu Items</h2>
-<center>No items in cart.Use'Add to Cart'option in <a href="menu-item-list-customer.html">Menu Item List</a></center>
+<center>No items in cart.Use'Add to Cart'option in <a href="/Servlet-TruYum/ShowMenuItemListCustomer">Menu Item List</a></center>
 
 </div><br></br>
 <br></br>

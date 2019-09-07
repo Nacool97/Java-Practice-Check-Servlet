@@ -27,7 +27,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>ShowMenuItemCustomerServlet</servlet-name>
-    <url-pattern>/ShowMenuItemCustomer</url-pattern>
+    <url-pattern>/ShowMenuItemListCustomer</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>

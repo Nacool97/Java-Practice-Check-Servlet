@@ -4,11 +4,19 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Dateutil {
-public static Date convertToDate(String date) throws Exception
+public static Date convertToDate(String date) 
 {
-	Date d;
+	try
+	{
+	   Date d;
   
-	 d = new SimpleDateFormat("dd/MM/YY").parse(date);
-	return d;
+	   d = new SimpleDateFormat("dd/MM/YY").parse(date);
+	  return d;
+	}
+	catch(Exception e)
+	{
+		
+	}
+	return null;
 }
 }

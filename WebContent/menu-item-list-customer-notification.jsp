@@ -11,8 +11,8 @@
 <header> truYum 
 <img src = "images/img.png" alt = "image_logo" />
 <nav >
-<a class="a2" href="menu-item-list-customer.html"><u>Menu</u></a>
-<a class="a1" href="cart.html" ><u>Cart</a></u></nav>
+<a class="a2" href="/ShowMenuItemListCustomer"><u>Menu</u></a>
+<a class="a1" href="/ShowCart" ><u>Cart</a></u></nav>
 </nav>
 </header>
 
@@ -29,27 +29,26 @@
 <td><b>Category</b></td>
 <td><b>Action</b></td>
 </tr>
+<c:forEach items="${x1}" var="list" >
 <tr>
-<td>Sandwich</td>
-<td><center>Yes</center></td>
-<td>Rs.99.00</td>
-<td>Main Course</td>
-<td><u><a href "">Add to Cart</a></u></td>
+  <td id="t11">${list.name}</td>
+  <td id="t12">${list.price}</td>
+  <c:if test="${list.active==true}">
+  <td id="t13">Yes</td>
+  </c:if>
+   <c:if test="${list.active==false}">
+  <td id="t13">No</td>
+  </c:if>
+  <td id="t15">${list.category}</td>
+  <c:if test="${list.freeDelivery==true}">
+  <td id="t16">Yes</td>
+  </c:if>
+   <c:if test="${list.freeDelivery==false}">
+  <td id="t16">No</td>
+  </c:if>
+  <td id="t17"><a href="menu-item-list-customer-notification.jsp?id=${list.id}">Add to Cart</a></td>
 </tr>
-<tr>
-<td>Burger</td>
-<td><center>No</center></td>
-<td>Rs.129.00</td>
-<td>Main Course</td>
-<td><u><a href "">Add to Cart</a></u></td>
-</tr>
-<tr>
-<td>Pizza</td>
-<td><center>No</center></td>
-<td>Rs.149.00</td>
-<td>Main Course</td>
-<td><u><a href "">Add to Cart</a></u></td>
-</tr>
+</c:forEach>
 </table></div>
 <footer>
 Copyright &copy; 2019 

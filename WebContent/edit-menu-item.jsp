@@ -13,10 +13,10 @@
 <header> truYum 
 <img src = "images/img.png" alt = "image_logo" />
 <nav >
-<a class="a2" href="/Servlet-TruYum/ShowMenuItemListAdminServlet"><u>Menu</u></a>
+<a class="a2" href="/Servlet-TruYum/ShowMenuItemAdmin"><u>Menu</u></a>
 <a class="a1" ></a></nav>
 </header>
-<form name="menuItemForm" action="EditMenuItem?id=${x.id}" onsubmit="valid()"method="post">
+<form name="menuItemForm" action="EditMenuItem?id=${x.id}" method="post">
 <div>
 <h2>Edit Menu Item</h2>
 <table class="Table">
@@ -29,8 +29,9 @@
 <tr><td><input type="text" name="price" id="price"style="text-align:right"
 value="<c:out value="${x.price}"/>"/></td> 
 <td class="radio"><input type="radio" name="act" <c:if test="${yes.isSelected()}"> <c:out value="Yes+${x.setActive(true)}"/> </c:if> id="yes" checked/><label for="yes">Yes</label><input type="radio" name="act" value= id="no" <c:if test="${no.isSelected()}"> <c:out value="No+${x.setActive(false)}"/> </c:if>/><label for="no">No</label></td>
+<fmt:formatDate pattern="dd/MM/yyyy" value="${x.dateOflaunch}" var ="dl"/>
 <td><input type="text" name="dateOfLaunch" id="DOL"
-value="<c:out value="${x.dateOflaunch}"/>"/></td>
+ value="<c:out value="${dl}"/>"/></td>
 <td><select name="category">
 <option  value="Starters" ${x.category.equals("Starters")?'selected':" "}>Starters</option>
 <option value="Main Course" ${x.category.equals("Main Course")?'selected':" "}>Main Course</option>
@@ -50,4 +51,3 @@ Copyright &copy; 2019
 </form>
 </body>
 </html>
-

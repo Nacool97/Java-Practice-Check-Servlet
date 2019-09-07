@@ -20,13 +20,13 @@ public MenuItemDaoCollectionImpl()
 		try{
 		MenuItem e = new MenuItem(1,"Sandwich","Main Course",99f,true,false,Dateutil.convertToDate("15/03/2017"));
 		al.add(e);
-		MenuItem e1 = new MenuItem(2,"Burger","Main Course",129f,true,false,Dateutil.convertToDate("23/12/2017"));
+		MenuItem e1 = new MenuItem(2,"Burger","Main Course",132f,true,false,Dateutil.convertToDate("23/12/2017"));
 		al.add(e1);
-		MenuItem e2 = new MenuItem(3,"Pizza","Main Course",149f,true,false,Dateutil.convertToDate("21/08/2018"));
+		MenuItem e2 = new MenuItem(3,"Pizza","Main Course",200f,true,false,Dateutil.convertToDate("21/08/2018"));
 		al.add(e2);
-		MenuItem e3 = new MenuItem(4,"French Fries","Startes",57f,true,true,Dateutil.convertToDate("02/07/2017"));
+		MenuItem e3 = new MenuItem(4,"French Fries","Startes",80f,false,true,Dateutil.convertToDate("02/07/2017"));
 		al.add(e3);
-		MenuItem e4 = new MenuItem(5,"Chocolate Brownie","Deserts",32f,true,true,Dateutil.convertToDate("02/11/2022"));
+		MenuItem e4 = new MenuItem(5,"Chocolate Brownie","Deserts",120f,true,true,Dateutil.convertToDate("02/11/2022"));
 		al.add(e4);
 		menuItemList=al;
 		}catch(Exception e)
@@ -36,7 +36,7 @@ public MenuItemDaoCollectionImpl()
 	}
 }
 
-public ArrayList<MenuItem> getMenuItemListCustomer() throws Exception {
+public ArrayList<MenuItem> getMenuItemListCustomer() {
 	ArrayList<MenuItem> m= new ArrayList<MenuItem>();
 	
 	
@@ -44,7 +44,7 @@ public ArrayList<MenuItem> getMenuItemListCustomer() throws Exception {
 	Dateutil du=new Dateutil();
 		for(MenuItem x:menuItemList)
 			{
-				if(x.getActive()==false && (x.getDateOflaunch().before(d.convertToDate("19/08/2019"))))
+				if(x.getActive()==true && (x.getDateOflaunch().before(d.convertToDate("19/09/2019"))))
 				{
 					m.add(x);
 				}

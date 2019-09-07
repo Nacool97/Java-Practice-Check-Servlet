@@ -62,10 +62,10 @@ public class EditMenuItemServlet extends HttpServlet {
 		}
 		String free = request.getParameter("fd");
 		boolean fd;
-		if(free.equalsIgnoreCase("Yes"))
-			fd = true;
-		else
+		if(free==null)
 			fd = false;
+		else
+			fd = true;
 		doGet(request, response);
 		MenuItem menuitem = new MenuItem(id,title,cat,price,active,fd,date);
 		menuItemDao.modifyMenuItem(menuitem);

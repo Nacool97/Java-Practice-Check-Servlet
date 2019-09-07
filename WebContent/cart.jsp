@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ page import="com.cognizant.truyum.dao.*"
+    		 import="java.util.*"		
+    		 import="com.cognizant.truyum.model.*" %>
+    		 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+    <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+    <%@page isELIgnored="false" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head><link rel="stylesheet" href="style/style.css"> </head>
@@ -7,39 +13,44 @@
 <header> truYum 
 <img src = "images/img.png" alt = "image_logo" />
 <nav>
-<a class = "a2" href="menu-item-list-customer.html"><u>Menu</u></a>
-<a class = "a1" href="cart.html" ><u>Cart</a></u>
+<a class = "a2" href="/Servlet-TruYum/ShowMenuItemListCustomer"><u>Menu</u></a>
+<a class = "a1" href="/Servlet-TruYum/ShowCart" ><u>Cart</a></u>
 </nav>
 </header>
-
 <div>
+
 <h2> Cart </h2>
 <table cellpadding="4">
 <tr>
+<c:if test="${rcarts==true}">
+<center><p style=color:green;>Item removed from cart successfully</p></center>
+</c:if>
 <td width=40%> <b> Name </b> </td>
 <td> <b> Free Delivery </b> </td> 
 <td> <b> Price </b> </td>
+<td> <b> Action </b> </td>
 </tr>
-<tr> <td> Sandwich </td> 
-<td><center> Yes </center></td>
-<td> Rs.99.00 </td>
-<td><u><a href= "cart-notification.html"> Delete </a> </u> </td>
-</tr>
-<tr> <td> Burger </td> 
-<td><center> No </center></td>
-<td> Rs.129.00 </td>
-<td><u><a href= "cart-notification.html"> Delete </a> </u> </td>
-</tr>
-<tr> <td> Pizza </td> 
-<td><center> No </center></td>
-<td> Rs.149.00 </td>
-<td><u><a href= "cart-notification.html"> Delete </a> </u> </td>
-</tr>
+<c:forEach items = "${x1}" var ="list">
 <tr>
-<td> </td>
-<td> <center> <b>  Total </b> </center> </td>
-<td> <b> Rs.377.00 </b> </td>
-</tr>
+<td>${list.name}</td>
+  <c:if test="${list.freeDelivery==true}">
+  <td>Yes</td>
+  </c:if>
+   <c:if test="${list.freeDelivery==false}">
+  <td>No</td>
+  </c:if>
+  <td>${list.price}</td>
+  <td><a href="RemoveCart?id=${list.id}">Delete</a></td>
+  </tr>
+ </c:forEach> 
+  <tr>
+  <td> </td>
+  <td> <center> <b>  Total </b> </center> </td>
+  
+  <td> <b> ${total}</b> </td>
+
+  
+  </tr>  
 </table>
 
 </div>

@@ -36,14 +36,14 @@
 <c:forEach items="${x}" var="list" >
 <tr>
   <td id="t11">${list.name}</td>
-  <td id="t12">${list.price}</td>
+  <td id="t12">Rs. ${list.price}</td>
   <c:if test="${list.active==true}">
   <td id="t13">Yes</td>
   </c:if>
    <c:if test="${list.active==false}">
   <td id="t13">No</td>
   </c:if>
-  <td id="t14">${list.dateOflaunch}</td>
+  <td id="t14"><fmt:formatDate pattern="dd/MM/yyyy" value="${list.dateOflaunch}"/></td>
   <td id="t15">${list.category}</td>
   <c:if test="${list.freeDelivery==true}">
   <td id="t16">Yes</td>

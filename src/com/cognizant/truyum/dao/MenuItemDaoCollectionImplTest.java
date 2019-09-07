@@ -13,7 +13,7 @@ public class MenuItemDaoCollectionImplTest {
 		for(MenuItem x:menuItemList)
 		System.out.println(x);
 	}
-	void testGetMenuItemListCustomer() throws Exception
+	void testGetMenuItemListCustomer()
 	{
 		MenuItemDao menuItemDao=new MenuItemDaoCollectionImpl();
 		List<MenuItem>menuItemList=menuItemDao.getMenuItemListCustomer();
