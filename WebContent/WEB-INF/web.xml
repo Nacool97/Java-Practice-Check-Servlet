@@ -79,4 +79,14 @@
     <servlet-name>RemoveCartServlet</servlet-name>
     <url-pattern>/RemoveCart</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ShowEditMovieServlet</display-name>
+    <servlet-name>ShowEditMovieServlet</servlet-name>
+    <servlet-class>com.cognizant.truyum.servlet.ShowEditMovieServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ShowEditMovieServlet</servlet-name>
+    <url-pattern>/ShowEditMovie</url-pattern>
+  </servlet-mapping>
 </web-app>

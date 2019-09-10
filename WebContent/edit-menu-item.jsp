@@ -28,7 +28,7 @@
 <tr><td><label for="price">Price (Rs.)</td><td>Active</td><td><label for="DOL">Date of Launch</label></td><td>Category</td></tr>
 <tr><td><input type="text" name="price" id="price"style="text-align:right"
 value="<c:out value="${x.price}"/>"/></td> 
-<td class="radio"><input type="radio" name="act" <c:if test="${yes.isSelected()}"> <c:out value="Yes+${x.setActive(true)}"/> </c:if> id="yes" checked/><label for="yes">Yes</label><input type="radio" name="act" value= id="no" <c:if test="${no.isSelected()}"> <c:out value="No+${x.setActive(false)}"/> </c:if>/><label for="no">No</label></td>
+<td class="radio"><input type="radio" value="true" name="act" <c:if test="${x.active==true}"> checked </c:if> id="yes"/><label for="yes">Yes</label><input type="radio" name="act" value="false" id="no" <c:if test="${x.active==false}"> checked </c:if>/><label for="no">No</label></td>
 <fmt:formatDate pattern="dd/MM/yyyy" value="${x.dateOflaunch}" var ="dl"/>
 <td><input type="text" name="dateOfLaunch" id="DOL"
  value="<c:out value="${dl}"/>"/></td>
@@ -38,7 +38,7 @@ value="<c:out value="${x.price}"/>"/></td>
 <option value="Desserts" ${x.category.equals("Desserts")?'selected':" "}>Desserts</option>
 <option value="Drinks" ${x.category.equals("Drinks")?'selected':" "}>Drinks</option>
 </select></td></tr>
-<tr><td><br><input type="checkbox" value="FD" style="width:15; height:15" name="fd" id="FD"/><label for="FD">Free Delivery</label></td></tr>
+<tr><td><br><input type="checkbox" value="true" style="width:15; height:15" name="fd" id="FD" <c:if test="${x.getFreeDelivery()==true}">checked</c:if>/><label for="FD">Free Delivery</label></td></tr>
 <td>
 <br>
 <input type="submit" value="Save" class="button" name="save" onClick="valid()"></input></td>

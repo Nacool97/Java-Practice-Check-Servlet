@@ -51,21 +51,11 @@ public class EditMenuItemServlet extends HttpServlet {
 		float price=Float.parseFloat(request.getParameter("price"));
 		String cat=request.getParameter("category");
 		String act = request.getParameter("act");
-		boolean active;
-		if(act.equalsIgnoreCase("Yes"))
-		{
-			active = true;
-		}
-		else
-		{	
-			active = false;
-		}
+		System.out.println(act);
+		boolean active=Boolean.parseBoolean(act);
+		
 		String free = request.getParameter("fd");
-		boolean fd;
-		if(free==null)
-			fd = false;
-		else
-			fd = true;
+		boolean fd=Boolean.parseBoolean(free);
 		doGet(request, response);
 		MenuItem menuitem = new MenuItem(id,title,cat,price,active,fd,date);
 		menuItemDao.modifyMenuItem(menuitem);
