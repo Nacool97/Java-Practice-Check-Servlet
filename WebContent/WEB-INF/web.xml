@@ -89,4 +89,14 @@
     <servlet-name>ShowEditMovieServlet</servlet-name>
     <url-pattern>/ShowEditMovie</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MemberHomePageServlet</display-name>
+    <servlet-name>MemberHomePageServlet</servlet-name>
+    <servlet-class>com.cognizant.truyum.servlet.MemberHomePageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MemberHomePageServlet</servlet-name>
+    <url-pattern>/MemberHomePageServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

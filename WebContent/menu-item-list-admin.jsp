@@ -20,7 +20,7 @@
 </nav>
 </header>
 <div>
-<p id="m1">Menu Items</p>
+<h2 id="m1">Menu Items</h2>
 <table id="t1">
 <tr>
   <th>Name</th>
